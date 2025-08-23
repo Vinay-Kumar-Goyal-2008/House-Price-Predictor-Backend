@@ -3,13 +3,6 @@ import numpy as np
 import pickle
 app= Flask(__name__)
 
-@app.route('/')
-def main():
-    return render_template('mainindex.html')
-
-@app.route('/predict')
-def predictweb():
-    return render_template('predictindex.html')
 @app.route('/submitval', methods=['POST'])
 def submitval():
     data=request.get_json()
