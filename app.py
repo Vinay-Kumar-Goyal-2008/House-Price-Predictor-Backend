@@ -2,7 +2,10 @@ from flask import Flask,render_template,request,jsonify
 import numpy as np
 import os
 import pickle
+from flask_cors import CORS
+
 app= Flask(__name__)
+CORS(app)
 
 @app.route('/submitval', methods=['POST'])
 def submitval():
