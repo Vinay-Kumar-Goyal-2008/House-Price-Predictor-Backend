@@ -8,7 +8,7 @@ app= Flask(__name__)
 CORS(app)
 @app.route('/')
 def main():
-    return'OK
+    return'OK'
 @app.route('/submitval', methods=['POST'])
 def submitval():
     data=request.get_json()
