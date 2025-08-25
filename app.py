@@ -16,7 +16,7 @@ def submitval():
         with open('model.pkl','rb') as f:
             model=pickle.load(f)
         price= model.predict([[int(data['livingarea']),int(data['basear']),int(data['firstar']),int(data['yrbuilt']),int(data['rebuilt'])]])
-        return jsonify({'status':200,'desc':'Request recieved and answer given','ans':float(price[0])})
+        return jsonify({'status':200,'desc':'Request recieved and answer given','ans':float(np.expm1(price[0]))})
     else:
         return jsonify({'status':404,'desc':'Data not received Try again','ans':'N/A'})
 port = int(os.environ.get("PORT", 5000))
